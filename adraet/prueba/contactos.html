@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos | ADRAET</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="widgets.css">
+</head>
+<body data-page="contacts">
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle">
+    <aside class="sidebar">
+        <a class="sidebar-brand" href="ADRAET%20Dashboard%20Panel.html">ADRAET<span>EXPO DW</span></a>
+        <div class="sidebar-user">
+            <div class="avatar">AD</div>
+            <div><h2>ADRAET EXPO DW</h2><span>adraetexpodw@gmail.com</span></div>
+        </div>
+        <nav class="sidebar-menu" aria-label="Navegación principal">
+            <p class="menu-head">Dashboard</p>
+            <a class="nav-link" href="ADRAET%20Dashboard%20Panel.html"><i class="las la-home"></i>Inicio</a>
+            <a class="nav-link" href="widget-placeholder.html?modulo=financiero"><i class="las la-balance-scale"></i>Financiero</a>
+            <a class="nav-link" href="widget-placeholder.html?modulo=analitico"><i class="las la-chart-pie"></i>Analítico</a>
+            <p class="menu-head">Widgets</p>
+            <a class="nav-link" href="calendario.html"><i class="las la-calendar"></i>Calendario</a>
+            <a class="nav-link active" href="contactos.html" aria-current="page"><i class="las la-users"></i>Contactos</a>
+            <a class="nav-link" href="widget-placeholder.html?modulo=ecommerce"><i class="las la-shopping-cart"></i>Ecommerce</a>
+            <a class="nav-link" href="widget-placeholder.html?modulo=mailbox"><i class="las la-envelope"></i>Mailbox</a>
+            <a class="nav-link" href="../todolist/todo.html"><i class="las la-check-circle"></i>Tareas</a>
+        </nav>
+    </aside>
+    <label class="sidebar-backdrop" for="sidebar-toggle" aria-label="Cerrar menú"></label>
+    <div class="main-content">
+        <header class="topbar">
+            <label class="menu-toggle" for="sidebar-toggle" aria-label="Abrir menú"><i class="las la-bars"></i></label>
+            <div class="topbar-title">Relaciones de negocio</div>
+            <div class="appearance-controls" aria-label="Preferencias de visualización">
+                <label class="theme-control" for="theme-toggle"><i class="las la-sun" aria-hidden="true"></i><input id="theme-toggle" class="switch-input" type="checkbox" role="switch" aria-label="Cambiar a modo oscuro"><span class="switch-track" aria-hidden="true"></span><i class="las la-moon" aria-hidden="true"></i></label>
+                <label class="language-control" for="language-toggle"><span>ES</span><input id="language-toggle" class="switch-input" type="checkbox" role="switch" aria-label="Switch to English"><span class="switch-track" aria-hidden="true"></span><span>EN</span></label>
+            </div>
+            <div class="topbar-user"><i class="las la-user-circle"></i><span>Mi negocio</span></div>
+        </header>
+        <main class="page-content">
+            <section class="page-heading">
+                <div><p class="eyebrow">CLIENTES Y COLABORADORES</p><h1>Contactos</h1><p class="muted">Mantén a mano la información importante de tu red de negocio.</p></div>
+                <button class="button button-primary" id="show-contact-form" type="button"><i class="las la-plus"></i> Agregar contacto</button>
+            </section>
+            <section class="panel form-panel" id="contact-form-panel" hidden>
+                <div class="section-heading"><div><p class="eyebrow">NUEVO REGISTRO</p><h2>Agregar contacto</h2></div><button class="icon-button" id="close-contact-form" type="button" aria-label="Cerrar formulario"><i class="las la-times"></i></button></div>
+                <form id="contact-form" class="data-form">
+                    <label>Nombre completo<input name="name" type="text" maxlength="100" placeholder="Ej. María Fernández" required></label>
+                    <label>Empresa u organización<input name="organization" type="text" maxlength="100" placeholder="Empresa o persona emprendedora" required></label>
+                    <label>Teléfono<input name="phone" type="tel" maxlength="30" placeholder="+506 8888-8888" required></label>
+                    <label>Correo electrónico<input name="email" type="email" maxlength="150" placeholder="nombre@correo.com" required></label>
+                    <label class="form-wide">Ubicación del negocio o residencia<input name="location" type="text" maxlength="160" placeholder="Cantón, provincia" required></label>
+                    <div class="form-actions"><button class="button button-light" id="cancel-contact-form" type="button">Cancelar</button><button class="button button-primary" type="submit">Guardar contacto</button></div>
+                </form>
+            </section>
+            <section class="panel contacts-panel">
+                <div class="contacts-toolbar"><div><h2>Directorio</h2><p class="muted" id="contact-summary"></p></div><label class="search-box"><i class="las la-search"></i><input id="contact-search" type="search" placeholder="Buscar contacto..." aria-label="Buscar contacto"></label></div>
+                <div class="contacts-list" id="contacts-list"></div>
+                <p class="empty-state" id="contacts-empty" hidden>No hay contactos que coincidan con la búsqueda.</p>
+            </section>
+            <p class="demo-note"><i class="las la-info-circle"></i> Datos de demostración guardados solamente en este navegador.</p>
+        </main>
+    </div>
+    <script src="widgets.js"></script>
+</body>
+</html>

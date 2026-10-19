@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+body{
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(../imagenes/background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.contenedor_principal{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 200px;
+    position: relative;
+}
+
+.box_afuera{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #004aad;
+    height: auto;
+    border-radius:20px;
+}
+
+.box_afuera div{
+    margin: 100px 40px;
+    transition: all 500ms;
+    
+}
+
+.box_afuera div h2{
+    font-weight: 350;
+    font-size: 24px; 
+    color: #fff;
+}
+
+.box_afuera button{
+    background: transparent;
+    color: #fff;
+    padding: 10px 40px;
+    border: 2px solid #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 300ms;
+    margin-top: 20px;
+}
+
+.box_afuera button:hover{
+    background: #ffffff50;
+    color: #fff;
+}
+
+.contenedor_formularios{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -145px;
+    left: 1px;
+    transition: left 500ms cubic-bezier(0.175 , 0.885,0.320, 1.275);
+}
+
+.contenedor_formularios form{
+    width: 100%;
+    padding: 80px 20px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 15px;
+}
+
+.contenedor_formularios form h3{
+    font-size: 30px;
+    text-align: center;
+    font-family: fuente1;
+    color: #0c9ac9;
+    margin-top: -30px;
+    
+}
+
+.contenedor_formularios form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    outline: none;
+}
+
+.contenedor_formularios form button{
+    padding: 10px 40px;
+    margin-top:40px;
+    border: none;
+    font-size: 15px;
+    background: #0c9ac9;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.login{
+    opacity: 1;
+    display: block;
+}
+
+.register{
+    display: none;
+}
+
+@media(max-width:800px){
+    .contenedor_principal{
+        margin-top: 50px;
+    }
+
+    .box_afuera{
+        max-width:350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .box_afuera div{
+        margin: 0px;
+        position: absolute;
+    }
+
+    .contenedor_formularios{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedor_formularios form{
+        position: relative;
+    }
+
+}
+
+@font-face {
+    font-family: fuente1;
+    src: url(../fonts/Moderniz.otf);
+}

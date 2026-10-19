@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | ADRAET</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="widgets.css">
+    <link rel="stylesheet" href="styleDashboard.css">
+</head>
+<body data-page="dashboard">
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle">
+    <aside class="sidebar">
+        <a class="sidebar-brand" href="ADRAET%20Dashboard%20Panel.html">ADRAET<span>EXPO DW</span></a>
+        <div class="sidebar-user">
+            <div class="avatar">AD</div>
+            <div><h2>ADRAET EXPO DW</h2><span>adraetexpodw@gmail.com</span></div>
+        </div>
+        <nav class="sidebar-menu" aria-label="Navegación principal">
+            <p class="menu-head">Dashboard</p>
+            <a class="nav-link active" href="ADRAET%20Dashboard%20Panel.html" aria-current="page"><i class="las la-home"></i>Inicio</a>
+            <a class="nav-link" href="widget-placeholder.html?modulo=financiero"><i class="las la-balance-scale"></i>Financiero</a>
+            <a class="nav-link" href="widget-placeholder.html?modulo=analitico"><i class="las la-chart-pie"></i>Analítico</a>
+            <p class="menu-head">Widgets</p>
+            <a class="nav-link" href="calendario.html"><i class="las la-calendar"></i>Calendario</a>
+            <a class="nav-link" href="contactos.html"><i class="las la-users"></i>Contactos</a>
+            <a class="nav-link" href="widget-placeholder.html?modulo=ecommerce"><i class="las la-shopping-cart"></i>Ecommerce</a>
+            <a class="nav-link" href="widget-placeholder.html?modulo=mailbox"><i class="las la-envelope"></i>Mailbox</a>
+            <a class="nav-link" href="../todolist/todo.html"><i class="las la-check-circle"></i>Tareas</a>
+        </nav>
+    </aside>
+    <label class="sidebar-backdrop" for="sidebar-toggle" aria-label="Cerrar menú"></label>
+    <div class="main-content">
+        <header class="topbar">
+            <label class="menu-toggle" for="sidebar-toggle" aria-label="Abrir menú"><i class="las la-bars"></i></label>
+            <div class="topbar-title">Panel de control</div>
+            <div class="appearance-controls" aria-label="Preferencias de visualización">
+                <label class="theme-control" for="theme-toggle">
+                    <i class="las la-sun" aria-hidden="true"></i>
+                    <input id="theme-toggle" class="switch-input" type="checkbox" role="switch" aria-label="Cambiar a modo oscuro">
+                    <span class="switch-track" aria-hidden="true"></span>
+                    <i class="las la-moon" aria-hidden="true"></i>
+                </label>
+                <label class="language-control" for="language-toggle">
+                    <span>ES</span>
+                    <input id="language-toggle" class="switch-input" type="checkbox" role="switch" aria-label="Switch to English">
+                    <span class="switch-track" aria-hidden="true"></span>
+                    <span>EN</span>
+                </label>
+            </div>
+            <div class="topbar-user"><i class="las la-user-circle"></i><span>Mi negocio</span></div>
+        </header>
+        <main class="page-content dashboard-content">
+            <section class="page-heading">
+                <div><p class="eyebrow">RESUMEN DE TU NEGOCIO</p><h1>Inicio</h1><p class="muted">Consulta tus indicadores y toma decisiones con información actualizada.</p></div>
+                <div class="dashboard-actions">
+                    <button class="button button-light" id="edit-metrics" type="button"><i class="las la-sliders-h"></i> Editar estadísticas</button>
+                    <button class="button button-primary" id="export-report" type="button"><i class="las la-file-export"></i> Exportar CSV</button>
+                </div>
+            </section>
+
+            <section class="metrics-grid" aria-label="Indicadores del negocio">
+                <article class="metric-card">
+                    <div class="metric-icon purchases-icon"><i class="las la-shopping-bag"></i></div>
+                    <div><p>Compras</p><h2 id="metric-purchases">—</h2><span>En el periodo analizado</span></div>
+                </article>
+                <article class="metric-card">
+                    <div class="metric-icon returns-icon"><i class="las la-undo-alt"></i></div>
+                    <div><p>Devoluciones</p><h2 id="metric-returns">—</h2><span>Monto total (USD)</span></div>
+                </article>
+                <article class="metric-card">
+                    <div class="metric-icon visitors-icon"><i class="las la-user-friends"></i></div>
+                    <div><p>Visitantes</p><h2 id="metric-visitors">—</h2><span>En el periodo analizado</span></div>
+                </article>
+                <article class="metric-card">
+                    <div class="metric-icon tasks-icon"><i class="las la-check-circle"></i></div>
+                    <div><p>Tareas completadas</p><h2 id="metric-task-rate">—</h2><span id="metric-task-count">—</span></div>
+                </article>
+            </section>
+
+            <section class="panel metrics-form-panel" id="metrics-form-panel" hidden>
+                <div class="section-heading">
+                    <div><p class="eyebrow">DATOS DE DEMOSTRACIÓN</p><h2>Actualizar estadísticas</h2><p class="muted">Completa los valores del periodo para actualizar el dashboard y su reporte.</p></div>
+                    <button class="icon-button" id="close-metrics-form" type="button" aria-label="Cerrar formulario"><i class="las la-times"></i></button>
+                </div>
+                <form id="metrics-form" class="data-form">
+                    <label>Fecha inicial del periodo<input type="date" name="periodStart" required></label>
+                    <label>Fecha final del periodo<input type="date" name="periodEnd" required></label>
+                    <label>Número de compras<input type="number" name="purchases" min="0" step="1" required></label>
+                    <label>Monto de devoluciones (USD)<input type="number" name="returns" min="0" step="0.01" required></label>
+                    <label>Número de visitantes<input type="number" name="visitors" min="0" step="1" required></label>
+                    <label>Tareas completadas<input type="number" name="completedTasks" min="0" step="1" required></label>
+                    <label>Tareas totales<input type="number" name="totalTasks" min="0" step="1" required></label>
+                    <p class="form-error form-wide" id="metrics-form-error" role="alert" hidden></p>
+                    <div class="form-actions"><button class="button button-light" id="cancel-metrics-form" type="button">Cancelar</button><button class="button button-primary" type="submit">Guardar estadísticas</button></div>
+                </form>
+            </section>
+
+            <section class="dashboard-lower-grid">
+                <article class="panel task-analytics">
+                    <div class="section-heading">
+                        <div><p class="eyebrow">SEGUIMIENTO</p><h2>Acciones necesarias</h2></div>
+                        <a class="text-link" href="../todolist/todo.html">Ver tareas <i class="las la-arrow-right"></i></a>
+                    </div>
+                    <div class="completion-summary">
+                        <div class="completion-ring" id="completion-ring" role="img" aria-label="0% de tareas completadas"><span id="completion-ring-label">0%</span></div>
+                        <div><strong id="completion-title">0% completado</strong><p class="muted" id="completion-description">Actualiza el total de tareas en tus estadísticas.</p></div>
+                    </div>
+                    <div class="progress-track" aria-hidden="true"><span id="task-progress-bar"></span></div>
+                    <button class="button button-primary report-button" id="generate-report" type="button"><i class="las la-chart-pie"></i> Generar reporte</button>
+                </article>
+                <article class="panel quick-links">
+                    <div class="section-heading"><div><p class="eyebrow">ACCESOS RÁPIDOS</p><h2>Tu espacio de trabajo</h2></div></div>
+                    <a href="calendario.html"><span class="quick-link-icon"><i class="las la-calendar"></i></span><span><strong>Calendario</strong><small>Revisa tus próximas citas</small></span><i class="las la-angle-right quick-arrow"></i></a>
+                    <a href="contactos.html"><span class="quick-link-icon"><i class="las la-users"></i></span><span><strong>Contactos</strong><small>Consulta tu directorio</small></span><i class="las la-angle-right quick-arrow"></i></a>
+                    <a href="../todolist/todo.html"><span class="quick-link-icon"><i class="las la-check-circle"></i></span><span><strong>Tareas</strong><small>Organiza tus pendientes</small></span><i class="las la-angle-right quick-arrow"></i></a>
+                </article>
+            </section>
+
+            <section class="panel report-panel" id="report-panel" hidden aria-live="polite">
+                <div class="report-heading">
+                    <div><p class="eyebrow">REPORTE DE ACTIVIDAD</p><h2>Resumen de estadísticas</h2><p class="muted" id="report-period"></p><p class="report-generated" id="report-generated"></p></div>
+                    <button class="button button-light no-print" id="print-report" type="button"><i class="las la-print"></i> Imprimir reporte</button>
+                </div>
+                <div class="report-grid" id="report-metrics"></div>
+                <p class="report-footnote">Reporte elaborado con datos de demostración ingresados en este navegador; no representa información financiera verificada.</p>
+            </section>
+            <p class="demo-note"><i class="las la-info-circle"></i> Las estadísticas de demostración se guardan solamente en este navegador.</p>
+        </main>
+    </div>
+    <script src="widgets.js"></script>
+</body>
+</html>

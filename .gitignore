@@ -1,0 +1,21 @@
+# Local database credentials; keep the example template versioned.
+/adraet/php/conexion.php
+
+# Local database dump contains personal data and plaintext passwords.
+/adraet/users.sql
+
+# Per-developer editor settings.
+/adraet/.vscode/
+
+# Local secrets and generated files.
+/adraet/.env
+/adraet/.env.*
+!/adraet/.env.example
+/adraet/*.log
+/adraet/*.bak
+/adraet/*.dump
+
+# Operating-system metadata.
+.DS_Store
+Thumbs.db
+Desktop.ini
